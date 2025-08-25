@@ -1,0 +1,107 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.nav-links {
+  display: flex; /* Flexbox in action */
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Main Layout using Grid */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Content + Sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Content & Sidebar */
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #e4e4e4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Flexbox cards inside content */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* 📱 Responsive Design (media queries) */
+@media (max-width: 1024px) {
+  /* Tablet */
+  .grid-layout {
+    grid-template-columns: 1fr; /* Stack content and sidebar */
+  }
+  .card-container {
+    flex-direction: column; /* Stack cards */
+  }
+}
+
+@media (max-width: 600px) {
+  /* Mobile */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .card {
+    font-size: 0.9rem;
+  }
+}
